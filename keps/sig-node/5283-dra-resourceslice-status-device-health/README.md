@@ -110,6 +110,7 @@ tags, and then generate with `hack/update-toc.sh`.
 - [Alternatives](#alternatives)
   - [Device Conditions](#device-conditions)
   - [Standardized Attributes](#standardized-attributes)
+  - [New DeviceHealth Resource](#new-devicehealth-resource)
   - [Standardized Events](#standardized-events)
   - [Vendor-Provided Metrics](#vendor-provided-metrics)
 - [Infrastructure Needed (Optional)](#infrastructure-needed-optional)
@@ -967,6 +968,7 @@ parameters in the ResourceSlice's own `spec`, so a condition's
 `observedGeneration` matching the ResourceSlice's `metadata.generation` may not
 reliably indicate that the device is healthy at that exact moment.
 
+
 ### Standardized Attributes
 
 A set of standard attributes could be defined to represent device health.
@@ -999,6 +1001,12 @@ labeled `health`. Other related information like the particular failure mode or
 remediation strategy of an unhealthy device also becomes mixed in with all of
 the other attributes of a device, making their relationship less clear even if
 the attributes have similar names.
+
+### New DeviceHealth Resource
+
+Instead of encoding new health information in a ResourceSlice, the same
+information could be represented in a new API type named DeviceHealth. An
+unhealthy device
 
 ### Standardized Events
 
